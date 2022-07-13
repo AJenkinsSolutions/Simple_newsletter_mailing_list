@@ -56,13 +56,6 @@ const ENDPOINT = 'https://'+client.server+'.api.mailchimp.com/3.0/'
 //   };
 //   run();
 
- 
-
-
-
-
-
-
 //body parser
 app.use(express.urlencoded({extended: true}));
 app.use(express.static( __dirname, + 'public'));
@@ -106,3 +99,8 @@ app.post('/', (req,res)=>{
             res.sendFile(__dirname + '/views/fail.html')
         })
 });
+
+app.post('/fail.html', (req, res) => {
+    
+    res.sendFile(__dirname + '/views/index.html');
+})
