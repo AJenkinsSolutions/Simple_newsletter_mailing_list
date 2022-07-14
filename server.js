@@ -93,9 +93,9 @@ app.post('/', (req,res)=>{
                 throw new Error(response.errors.code);
             }
         };
-        run().then((data) => {
+        run().then(() => {
             res.sendFile(__dirname + '/views/success.html');
-        }).catch((err) => {
+        }).catch(() => {
             res.sendFile(__dirname + '/views/fail.html')
         })
 });
